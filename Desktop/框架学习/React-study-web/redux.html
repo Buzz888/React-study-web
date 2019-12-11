@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dispath({type:'JIAN',n:1})">-</button>
+    <span id="countDisplay"></span>
+    <button onclick="dispath({type:'JIA',n:1})">+</button>
+    
+</body>
+<script>
+let countDisplay = document.querySelector('#countDisplay')
+const countState = {
+    count:6
+}
+const renderCount = (state)=>{
+    countDisplay.innerHTML = state.count
+}
+// const jian =(n)=>{
+   
+//     countState.count = countState.count -n;
+//     renderCount(countState)
+// }
+const changeState = (action)=>{
+   switch(action.type) {
+      case 'JIAN':
+          countState.count -= action.n;
+          break;
+      case 'JIA':
+          countState.count += action.n
+          break;
+      default:
+          break
+   }
+};
+
+const dispath =(action) =>{
+    changeState(action)
+    renderCount(countState)
+}
+renderCount(countState)
+
+</script>
+</html>

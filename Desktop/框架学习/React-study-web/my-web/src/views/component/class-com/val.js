@@ -1,0 +1,59 @@
+export default `
+## 类组件
+>学习类组件需要了解类中的静态属性静态方法&实例属性和和实例方法
+
+\`\`\`
+class component(){
+    =>设置静态属性
+     static jack = 18
+    =>设置静态方法 
+     static say(){
+     console.log('hello react')
+     }
+    =>实例属性两种方式
+    jack1 = 18
+    constructor(){
+    this.jack2 = 18
+    } 
+    =>实例方法
+    say1(){
+    console.log('hello react')
+    }
+}
+继承关键字 extends super()=>相当于call
+\`\`\`
+### 创建类组件
+\`\`\`
+import React,{Component} from 'react'
+class A extends Component {
+            constructor(props){
+      props =>依然是传递进来的属性
+      super(props)
+      }
+      render(){
+      return(<div>hello react</div>)
+      }
+}
+\`\`\`
+static propTypes定义属性规则
+isRequired必须传递
+PropType.string/bool/number/func/object/symbol/node
+element(JSX元素)/instanceOf必须某实例/oneOf([])其中一个
+### 状态管控
+\`\`\`
+ this.state = {
+      num:1
+    }
+this.setState({
+      num:this.state.num+1
+    })
+\`\`\`
+
+
+### 非受控组件
+\`\`\`
+<P ref="timeBox"><P>
+this.refs.timeBox.innerHTML = 'hello vue'
+<P ref={x=>{this.timeBox = x}}></P>
+
+`

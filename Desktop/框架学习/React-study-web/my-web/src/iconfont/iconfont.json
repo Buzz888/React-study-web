@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "808086",
+      "name": "menu",
+      "font_class": "oacute",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "3195008",
+      "name": "右",
+      "font_class": "you",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "3667828",
+      "name": "回到顶部",
+      "font_class": "huidaodingbu",
+      "unicode": "e502",
+      "unicode_decimal": 58626
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+export {default as Index} from './index/index'
+export {default as Myrouter} from './react-router/index'
+export {default as Nopath} from './Nopath/index'
+export {default as Components} from './component/index'
+export {default as Life} from './life/index'
+export {default as Elem} from './elem/index'

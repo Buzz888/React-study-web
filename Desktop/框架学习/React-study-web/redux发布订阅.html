@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="store.dispacth({type:'JIAN',n:1})">-</button>
+    <span id="countDisplay"></span>
+    <button onclick="store.dispacth({type:'JIA',n:1})">+</button>
+    
+</body>
+<script>
+let countDisplay = document.querySelector('#countDisplay')
+const countState = {
+    count:6
+}
+const changeState = (action)=>{
+   switch(action.type) {
+      case 'JIAN':
+          countState.count -= action.n;
+          break;
+      case 'JIA':
+          countState.count += action.n
+          break;
+      default:
+          break
+   }
+};
+const createStore = (state,changeState) =>{
+    const getState =()=> state;
+    const listeners = [];
+    const subscribe = (listener) =>listeners.push(listener)
+    const dispacth =(action)=>{
+        changeState(action)
+        listeners.forEach(listener=>listener())
+    }
+    return {getState,dispacth,subscribe}
+}
+const store = createStore(countState,changeState)
+const renderCount = (state)=>{
+    countDisplay.innerHTML = store.getState().count
+}
+store.subscribe(renderCount)
+renderCount()
+
+
+</script>
+</html>
